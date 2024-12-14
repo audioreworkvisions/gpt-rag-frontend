@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Light theme colors */
+    --background: 0 0% 98%;
+    --foreground: 240 5.3% 26.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 5.9% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 5.9% 10%;
+    --primary: 346 84% 25%;  /* burgundy */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 196 100% 47%;  /* cyan */
+    --secondary-foreground: 240 5.9% 10%;
+    --ring: 196 100% 47%;  /* cyan */
+  }
+
+  .dark {
+    --background: 240 5.9% 10%;
+    --foreground: 240 4.8% 95.9%;
+    --card: 240 5.9% 10%;
+    --card-foreground: 240 4.8% 95.9%;
+    --popover: 240 5.9% 10%;
+    --popover-foreground: 240 4.8% 95.9%;
+    --primary: 346 84% 40%;  /* burgundy lighter */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 196 100% 55%;  /* cyan lighter */
+    --secondary-foreground: 240 4.8% 95.9%;
+    --ring: 196 100% 55%;  /* cyan lighter */
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
