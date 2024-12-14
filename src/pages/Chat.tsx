@@ -8,6 +8,8 @@ interface Message {
   id: string;
   type: 'user' | 'ai';
   content: string;
+  contentType: 'text' | 'image';  // Type of content being displayed
+  imageUrl?: string;              // URL for generated images
   context?: string;
   timestamp: Date;
 }
@@ -25,6 +27,7 @@ export const Chat: FC = () => {
       id: Date.now().toString(),
       type: 'user',
       content: newMessage.trim(),
+      contentType: 'text',  // Default to text for user messages
       timestamp: new Date(),
     };
 
@@ -51,6 +54,7 @@ export const Chat: FC = () => {
         id: Date.now().toString(),
         type: 'ai',
         content: data.response,
+        contentType: 'text',  // Default to text for AI responses
         context: data.context,
         timestamp: new Date(),
       }]);
